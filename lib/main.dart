@@ -49,10 +49,9 @@ class Seminar4 extends StatefulWidget {
 }
 
 class _Seminar4State extends State<Seminar4> {
+  String txt = '';
   @override
   Widget build(BuildContext context) {
-    TextEditingController c = TextEditingController();
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Семинар 4'),
@@ -62,7 +61,9 @@ class _Seminar4State extends State<Seminar4> {
         padding: const EdgeInsets.symmetric(horizontal: 80),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           TextField(
-            controller: c,
+            onChanged: (value) => setState(() {
+              txt = value;
+            }),
           ),
           const SizedBox(
             height: 16,
@@ -73,10 +74,8 @@ class _Seminar4State extends State<Seminar4> {
           ),
           TextButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Second(text: c.text)));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Second(text: txt)));
               },
               child: const Text('Ask question'))
         ]),

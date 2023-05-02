@@ -9,9 +9,9 @@ class Second extends StatefulWidget {
 }
 
 class _SecondState extends State<Second> {
+  String txt = "";
   @override
   Widget build(BuildContext context) {
-    TextEditingController c = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         title: Text('Семинар 4'),
@@ -21,7 +21,9 @@ class _SecondState extends State<Second> {
         padding: const EdgeInsets.symmetric(horizontal: 80),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           TextField(
-            controller: c,
+            onChanged: (value) => setState(() {
+              txt = value;
+            }),
           ),
           const SizedBox(
             height: 16,
@@ -35,7 +37,7 @@ class _SecondState extends State<Second> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Seminar4(text: c.text)));
+                        builder: (context) => Seminar4(text: txt)));
               },
               child: const Text('Ask question'))
         ]),

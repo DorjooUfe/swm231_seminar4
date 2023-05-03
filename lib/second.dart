@@ -14,7 +14,7 @@ class _SecondState extends State<Second> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Семинар 4'),
+        title: const Text('Answer'),
       ),
       body: Container(
         alignment: Alignment.center,
@@ -39,7 +39,7 @@ class _SecondState extends State<Second> {
                     MaterialPageRoute(
                         builder: (context) => Seminar4(text: txt)));
               },
-              child: const Text('Ask question'))
+              child: const Text('Answer question'))
         ]),
       ),
     );

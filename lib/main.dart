@@ -54,7 +54,7 @@ class _Seminar4State extends State<Seminar4> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Семинар 4'),
+        title: const Text('Ask question'),
       ),
       body: Container(
         alignment: Alignment.center,
